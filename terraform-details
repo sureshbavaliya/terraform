@@ -1,0 +1,80 @@
+Terraform Basic
+Slide 1: Introduction to Terraform
+What is Terraform?
+Terraform is an Infrastructure as Code (IaC) tool developed by HashiCorp that Go Laguguge allows users to define, provision, and manage cloud infrastructure using a simple declarative configuration language called HashiCorp Configuration Language (HCL). Michel Hashimoto -2014. Est. (AWS and Digital Ocean)
+🔹 Key Features:-
+Cloud-Agnostic: Works with AWS, Azure, Google Cloud, Kubernetes, and more.
+ Declarative Approach: Define the desired state, and Terraform automates the changes.
+ State Management: Maintains infrastructure state for accurate tracking and updates.
+ Execution Planning: Preview changes before applying them.
+ Idempotency: Ensures infrastructure changes are applied only if necessary.
+ Automation: Easily integrates with CI/CD pipelines.
+________________________________________
+Slide 2: Benefits of Terraform
+Title: Why Use Terraform? 
+•	Automates infrastructure management.
+•	Enables version control for infrastructure.
+•	Provides a declarative approach.
+•	Ensures consistency across environments.
+Slide 3: Installation and Setup
+Title: Installing Terraform
+1.	Download Terraform from terraform.io.
+2.	Extract and add it to your system PATH.
+3.	Verify installation using:
+terraform --version
+Slide 4: Basic Terraform Workflow
+Title: Terraform Workflow 
+1.	Write - Define infrastructure in .tf files.
+2.	Plan - Preview changes using terraform plan.
+3.	Format :- fmt – set as a formatting 
+4.	Vadilate :- 
+5.	Apply - Deploy infrastructure using terraform apply.
+6.	Destroy - Remove infrastructure using terraform destroy.
+Slide 5: Basic Terraform Commands
+•	Essential Terraform Commands
+•	1. terraform init
+•	Definition: Initializes a Terraform working directory by downloading the necessary provider plugins and setting up the backend.
+Usage: Run this command first in a new Terraform project to ensure all required dependencies are installed.
+•	2. terraform plan
+•	Definition: Generates and displays an execution plan, showing the changes Terraform will make to the infrastructure.
+Usage: Helps users review potential modifications before applying them.
+•	3. terraform apply
+•	Definition: Executes the planned changes and provisions the infrastructure as defined in the Terraform configuration files.
+Usage: After reviewing the execution plan, use this command to create or update resources.
+•	4. terraform destroy
+•	Definition: Removes all resources defined in the Terraform configuration, effectively tearing down the infrastructure.
+Usage: Use with caution, as it will delete all managed resources.
+•	5. terraform fmt
+•	Definition: Formats Terraform configuration files to maintain consistent style and readability.
+Usage: Ensures best practices in code formatting before committing changes.
+•	Would you like me to add more commands or details? 🚀
+Log in to Azure using the following command:
+az login
+az account set --subscription "<SUBSCRIPTION_ID>"
+
+Step 3: Configure Terraform for Azure
+Create a Terraform configuration file (main.tf) with the Azure provider:
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "example" {
+  name     = "myResourceGroup"
+  location = "East US"
+}
+
+ 
+Step 4: Initialize Terraform
+Run the following command to initialize the working directory and download necessary plugins:
+terraform init
+
+________________________________________
+Step 5: Plan the Deployment
+Preview the changes before applying them:
+terraform plan
+
+________________________________________
+Step 6: Apply the Configuration
+Create the defined resources in Azure:
+terraform apply -auto-approve
+
